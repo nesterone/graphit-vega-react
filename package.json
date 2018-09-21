@@ -1,0 +1,18 @@
+{
+  "name": "react-graphit",
+  "version": "1.0.0",
+  "description": "Visualisation comopnser withing react component on top of vega visual gramma",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --hot --inline",
+    "build": "rimraf dist/ && webpack --config webpack.config.js --mode production"
+  },
+  "author": "nesterone",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  }
+}
