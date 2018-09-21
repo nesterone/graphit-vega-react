@@ -1,0 +1,16 @@
+<VegaLite>
+  <Data values={data}/>
+  <Mark type='bar'/>
+  <Encode render={({a, b})=> (
+    <Fragment>
+      <X
+        field={gender}
+        type='ordinal'
+      />
+      <Y
+        field={people}
+        type='quantitative'
+      />
+    </Fragment>
+    )/>
+</VegaLite>
