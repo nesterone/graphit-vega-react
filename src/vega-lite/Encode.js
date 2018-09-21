@@ -16,7 +16,7 @@ class Encode extends Component {
 }
 
 Encode.propTypes = {
-    render: PropTypes.func.required
+    render: PropTypes.func
 };
 
 
