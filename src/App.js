@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import VegaLite from "./VegaLite";
-import Data from "./Data";
+import VegaLite from "./vega-lite/VegaLite";
+import Data from "./vega-lite/Data";
+import Mark from "./vega-lite/Mark";
 
 const data = [
     {"a": "A","b": 28}, {"a": "B","b": 55}, {"a": "C","b": 43},
@@ -13,6 +14,7 @@ class App extends Component {
         return (
             <VegaLite>
                 <Data values={data}/>
+                <Mark type={'bar'}/>
             </VegaLite>
         );
     }
