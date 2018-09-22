@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import {VegaLiteSpecContext} from "./VegaLite";
-import SpecUpdater from "./spec/SpecUpdater";
+import SpecMerge from "./spec/SpecMerge";
 
 class Data extends Component {
     get data () {
@@ -10,10 +10,10 @@ class Data extends Component {
 
     render() {
         return <VegaLiteSpecContext.Consumer>
-            { ({updateSpec}) => (
-                <SpecUpdater
+            { ({merge}) => (
+                <SpecMerge
                     chunk={this.data}
-                    updateSpec={updateSpec}
+                    merge={merge}
                 />)
             }
         </VegaLiteSpecContext.Consumer>;

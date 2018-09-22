@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-class SpecUpdater extends Component {
+class SpecMerge extends Component {
     componentDidMount() {
-        this.props.updateSpec(this.props.chunk);
+        this.props.merge(this.props.chunk);
     }
 
     render() {
@@ -10,4 +10,4 @@ class SpecUpdater extends Component {
     }
 }
 
-export default SpecUpdater;
+export default SpecMerge;

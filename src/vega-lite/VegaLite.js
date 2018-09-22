@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import merge from 'lodash.merge'
 import Vega from 'react-vega';
 import { compile } from 'vega-lite';
-
 
 export const VegaLiteSpecContext = React.createContext();
 
@@ -14,14 +13,14 @@ export default class VegaLite extends React.Component {
             $schema: "https://vega.github.io/schema/vega-lite/v2.json"
         };
 
-        this.updateSpec = (chunk) => {
+        this.merge = (chunk) => {
             merge(this.spec, chunk);
             console.log('change spec', this.spec);
         };
 
         this.vegaContext = {
             spec: this.spec,
-            updateSpec: this.updateSpec
+            merge: this.merge
         };
 
         this.state = {
@@ -32,10 +31,9 @@ export default class VegaLite extends React.Component {
     }
 
     componentDidMount () {
-        // taddaa spec is ready here
         console.log('vega-lite spec', this.spec);
-        let compiledSpec = compile(this.spec);
-        console.log('compiled spec', compiledSpec);
+        let compiledSpec = compile(this.spec).spec;
+        console.log('compiled spec', JSON.stringify(compiledSpec));
         this.setState(()=> ({
             spec: compiledSpec
         }))
@@ -46,10 +44,12 @@ export default class VegaLite extends React.Component {
         console.log('before render ', this.spec);
         const specToRender = this.state.spec;
         return (
-            <VegaLiteSpecContext.Provider value={this.vegaContext}>
-                {this.props.children}
-                {specToRender && <Vega spec={specToRender} /> }
-            </VegaLiteSpecContext.Provider>
+            <Fragment>
+                <VegaLiteSpecContext.Provider value={this.vegaContext}>
+                    {this.props.children}
+                </VegaLiteSpecContext.Provider>
+                {specToRender && <Vega spec={specToRender}/> }
+            </Fragment>
         );
     }
 }

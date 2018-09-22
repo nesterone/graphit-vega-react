@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {VegaLiteSpecContext} from "./VegaLite";
-import SpecUpdater from "./spec/SpecUpdater";
+import SpecMerge from "./spec/SpecMerge";
 
 class X extends Component {
     get encoding() {
@@ -17,10 +17,10 @@ class X extends Component {
 
     render() {
         return <VegaLiteSpecContext.Consumer>
-            {({updateSpec}) => (
-                <SpecUpdater
+            {({merge}) => (
+                <SpecMerge
                     chunk={this.encoding}
-                    updateSpec={updateSpec}
+                    merge={merge}
                 />)
             }
         </VegaLiteSpecContext.Consumer>;
