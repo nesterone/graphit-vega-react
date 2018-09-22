@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
-import {VegaLiteSpecContext} from "./VegaLite";
-import SpecMerge from "./spec/SpecMerge";
+import BaseVegaSpecChunkProvider from "./BaseVegaSpecChunkProvider";
 
-class Y extends Component {
-    get encoding() {
+class Y extends BaseVegaSpecChunkProvider {
+    getChunk() {
         return {
             encoding: {
                 y: {
@@ -13,17 +12,6 @@ class Y extends Component {
                 }
             }
         };
-    }
-
-    render() {
-        return <VegaLiteSpecContext.Consumer>
-            {({merge}) => (
-                <SpecMerge
-                    chunk={this.encoding}
-                    merge={merge}
-                />)
-            }
-        </VegaLiteSpecContext.Consumer>;
     }
 }
 

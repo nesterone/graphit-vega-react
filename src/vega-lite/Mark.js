@@ -1,22 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
-import SpecMerge from "./spec/SpecMerge";
-import {VegaLiteSpecContext} from "./VegaLite";
+import BaseVegaSpecChunkProvider from "./BaseVegaSpecChunkProvider";
 
-class Mark extends Component {
-    get mark () {
+class Mark extends BaseVegaSpecChunkProvider {
+    getChunk () {
         return {mark: this.props.type};
-    }
-
-    render() {
-        return <VegaLiteSpecContext.Consumer>
-            { ({merge}) => (
-                <SpecMerge
-                    chunk={this.mark}
-                    merge={merge}
-                />)
-            }
-        </VegaLiteSpecContext.Consumer>;
     }
 }
 
