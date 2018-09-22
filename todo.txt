@@ -1,0 +1,4 @@
+- themes managment
+- locale management
+- common context for few vizs
+- experiment with typecript

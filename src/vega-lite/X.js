@@ -20,5 +20,4 @@ X.propTypes = {
     type: PropTypes.string
 };
 
-
 export default X;
