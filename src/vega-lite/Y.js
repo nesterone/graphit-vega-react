@@ -20,5 +20,4 @@ Y.propTypes = {
     type: PropTypes.string
 };
 
-
 export default Y;

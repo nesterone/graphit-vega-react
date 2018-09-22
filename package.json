@@ -1,5 +1,5 @@
 {
-  "name": "react-graphit",
+  "name": "graphit-vega-react",
   "version": "1.0.0",
   "description": "Visualisation comopnser withing react component on top of vega visual gramma",
   "scripts": {
