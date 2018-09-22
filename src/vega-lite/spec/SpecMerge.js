@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from "prop-types";
 
 class SpecMerge extends Component {
     componentDidMount() {
@@ -9,5 +10,10 @@ class SpecMerge extends Component {
         return null
     }
 }
+
+SpecMerge.propTypes = {
+    merge: PropTypes.func,
+    chunk: PropTypes.object
+};
 
 export default SpecMerge;
