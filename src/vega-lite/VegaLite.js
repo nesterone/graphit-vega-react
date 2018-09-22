@@ -8,29 +8,40 @@ export const VegaLiteSpecContext = React.createContext({
 
 export default class VegaLite extends React.Component {
 
+
     constructor(props) {
         super(props);
 
+        this.spec = { description: 'aaaa'};
+
         this.updateSpec = (chunk) => {
-            this.setState(state => ({
-                ...state,
+            this.spec = {
+                ...this.spec,
                 ...chunk
-            }));
+            };
+
+            console.log('change spec', this.spec);
         };
 
-        this.state = {
-            spec: { description: 'aaaa'},
-            updateSpec: this.updateSpec,
+        this.vegaContext = {
+            spec: this.spec,
+            updateSpec: this.updateSpec
         };
+
+        console.log('prep context', this.vegaContext);
     }
 
+
     componentDidMount () {
-        console.log('init vega lite', this.state);
+        // taddaa spec is ready here
+        console.log('init vega lite', this.spec);
     }
 
     render() {
+        console.log('before render ', this.vegaContext);
+        console.log('before render ', this.spec);
         return (
-            <VegaLiteSpecContext.Provider value={this.state}>
+            <VegaLiteSpecContext.Provider value={this.vegaContext}>
                 {this.props.children}
             </VegaLiteSpecContext.Provider>
         );

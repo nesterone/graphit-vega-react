@@ -15,7 +15,7 @@ class Data extends Component {
 
     render() {
         return <VegaLiteSpecContext.Consumer>
-            { ({updateSpec}) => (<VegaLiteContextUpdated chunk={this.chunk} updateSpe={updateSpec} />)}
+            { ({updateSpec}) => (<VegaLiteContextUpdated chunk={this.chunk} updateSpec={updateSpec} />)}
         </VegaLiteSpecContext.Consumer>;
     }
 }
