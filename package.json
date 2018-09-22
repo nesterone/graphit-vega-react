@@ -22,8 +22,11 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "prop-types": "^15.6.2"
+    "react-vega": "^4.0.2",
+    "vega-lib": "^4.2.0",
+    "vega-lite": "^3.0.0-rc6"
   }
 }
