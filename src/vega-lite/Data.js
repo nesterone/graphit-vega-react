@@ -4,18 +4,22 @@ import {VegaLiteSpecContext} from "./VegaLite";
 import VegaLiteContextUpdated from "./VegaLiteContextUpdated";
 
 class Data extends Component {
-
-    get chunk () {
+    get data () {
         return {data: {values: this.props.values}};
     }
 
     componentDidMount() {
-        console.log('got data part', this.chunk);
+        console.log('got data part', this.data);
     }
 
     render() {
         return <VegaLiteSpecContext.Consumer>
-            { ({updateSpec}) => (<VegaLiteContextUpdated chunk={this.chunk} updateSpec={updateSpec} />)}
+            { ({updateSpec}) => (
+                <VegaLiteContextUpdated
+                    chunk={this.data}
+                    updateSpec={updateSpec}
+                />)
+            }
         </VegaLiteSpecContext.Consumer>;
     }
 }

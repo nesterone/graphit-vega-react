@@ -5,10 +5,7 @@ export const VegaLiteSpecContext = React.createContext({
     updateSpec: (chunk) =>  {}
 });
 
-
 export default class VegaLite extends React.Component {
-
-
     constructor(props) {
         super(props);
 
@@ -30,7 +27,6 @@ export default class VegaLite extends React.Component {
 
         console.log('prep context', this.vegaContext);
     }
-
 
     componentDidMount () {
         // taddaa spec is ready here
