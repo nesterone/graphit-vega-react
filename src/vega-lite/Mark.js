@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import VegaLiteContextUpdated from "./VegaLiteContextUpdated";
+import SpecUpdater from "./SpecUpdater";
 import {VegaLiteSpecContext} from "./VegaLite";
 
 class Mark extends Component {
@@ -8,14 +8,10 @@ class Mark extends Component {
         return {mark: this.props.type};
     }
 
-    componentDidMount() {
-        console.log('got mark', this.mark);
-    }
-
     render() {
         return <VegaLiteSpecContext.Consumer>
             { ({updateSpec}) => (
-                <VegaLiteContextUpdated
+                <SpecUpdater
                     chunk={this.mark}
                     updateSpec={updateSpec}
                 />)

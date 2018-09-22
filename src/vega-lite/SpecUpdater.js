@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class VegaLiteContextUpdated extends Component {
+class SpecUpdater extends Component {
     componentDidMount() {
         this.props.updateSpec(this.props.chunk);
     }
@@ -10,4 +10,4 @@ class VegaLiteContextUpdated extends Component {
     }
 }
 
-export default VegaLiteContextUpdated;
+export default SpecUpdater;

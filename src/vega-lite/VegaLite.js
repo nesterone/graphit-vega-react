@@ -1,15 +1,14 @@
 import React from 'react';
 
-export const VegaLiteSpecContext = React.createContext({
-    spec: { description: 'aaaa'},
-    updateSpec: (chunk) =>  {}
-});
+export const VegaLiteSpecContext = React.createContext();
 
 export default class VegaLite extends React.Component {
     constructor(props) {
         super(props);
 
-        this.spec = { description: 'aaaa'};
+        this.spec = {
+            $schema: "https://vega.github.io/schema/vega-lite/v2.json"
+        };
 
         this.updateSpec = (chunk) => {
             this.spec = {
