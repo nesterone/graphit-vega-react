@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash.merge'
 
 export const VegaLiteSpecContext = React.createContext();
 
@@ -11,11 +12,7 @@ export default class VegaLite extends React.Component {
         };
 
         this.updateSpec = (chunk) => {
-            this.spec = {
-                ...this.spec,
-                ...chunk
-            };
-
+            merge(this.spec, chunk);
             console.log('change spec', this.spec);
         };
 

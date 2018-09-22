@@ -1,8 +1,8 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import VegaLite from "./vega-lite/VegaLite";
 import Data from "./vega-lite/Data";
 import Mark from "./vega-lite/Mark";
-import Encode from "./vega-lite/Encode";
+import Encoding from "./vega-lite/Encoding";
 import X from "./vega-lite/X";
 import Y from "./vega-lite/Y";
 
@@ -17,13 +17,11 @@ class App extends Component {
         return (
             <VegaLite>
                 <Data values={data}/>
-                <Mark type={'bar'}/>
-                <Encode render={({a,b})=> (
-                    <Fragment>
-                        <X field={a} type='ordinal'/>
-                        <Y field={b} type='quantitative'/>
-                    </Fragment>
-                )}/>
+                <Mark type='bar'/>
+                <Encoding>
+                    <X field='a' type='ordinal'/>
+                    <Y field='b' type='quantitative'/>
+                </Encoding>
             </VegaLite>
         );
     }

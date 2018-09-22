@@ -8,7 +8,7 @@
       />
   </Transform>
   <Mark type='bar'/>
-  <Encode render={({gender, people, age})=> (
+  <Encode render={({gender, people, age}) => (
     <Fragment>
       <Column field={age} type="ordinal"/>
       <X

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 import {VegaLiteSpecContext} from "./VegaLite";
-import SpecUpdater from "./SpecUpdater";
+import SpecUpdater from "./spec/SpecUpdater";
 
 class Data extends Component {
     get data () {

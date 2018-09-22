@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import SpecUpdater from "./SpecUpdater";
+import SpecUpdater from "./spec/SpecUpdater";
 import {VegaLiteSpecContext} from "./VegaLite";
 
 class Mark extends Component {
