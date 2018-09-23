@@ -1,4 +1,30 @@
 - themes managment
 - locale management
+- app level management over data
 - common context for few vizs
 - experiment with typecript
+
+-- other ideas
+-- data processiong in worker
+-- data processing in server
+-- integration with wepack
+-- create dev environment with dev tools like redux style transform 1,2,3 time machine (or reuse redux)
+
+how just render table if I have imagginary data in DB ?
+
+dataSource =>
+    (<Fragment>
+        <Data/>
+        <Transform>
+            {children}
+        </Transform>
+    </Fragment>}
+
+<CustomVisualization dataSource={dataSource}>
+   {(rows)=> (   ///  all rows from DB !! it make sence to think about iterators etc
+      rows.map(<Row/>)
+
+   )}
+</CustomVisualization>
+
+
