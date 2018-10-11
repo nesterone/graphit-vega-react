@@ -28,3 +28,23 @@ dataSource =>
 </CustomVisualization>
 
 
+
+/// idea with locale config
+
+
+<VegaProvider
+    formatLocale='decimal'
+    timeFormatLocale='days'
+>
+ <App/>
+</VegaProvider>
+
+
+
+<VegaContext
+        timeZone="blahblah"
+        visualConfig={someVIsualConfig}
+        themeSwitcher={somethingHere}
+      >
+    <App/>
+</VegaContext>

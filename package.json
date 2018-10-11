@@ -1,7 +1,7 @@
 {
   "name": "graphit-vega-react",
-  "version": "1.0.0",
-  "description": "Visualisation comopnser withing react component on top of vega visual gramma",
+  "version": "1.0.0-beta",
+  "description": "Visualisation composer within react component on top of vega visual grammar",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --inline",
     "build": "rimraf dist/* && webpack --config webpack.config.js --mode production"
