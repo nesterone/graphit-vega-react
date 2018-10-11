@@ -1,6 +1,6 @@
 # Intro
 
-> Be AWARE: It's just  a concept! Don use it ;-)
+> Be AWARE: It's just  a concept! Don't use it ;-)
 
 Idea is to adapt Vega syntax on more component like style, so instead
 writing:
